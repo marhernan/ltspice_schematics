@@ -1,0 +1,215 @@
+====================================================================
+
+BILL OF MATERIALS (BOM)
+
+Hybrid Laptop + Breadboard Op-Amp Synthesizer ("Parle-moi de lui")
+
+Architecture: Laptop (Conductor) -> Breadboard Filters (Instruments) -> Speakers
+
+====================================================================
+
+
+
+1. ACTIVE INTEGRATED CIRCUITS (OP-AMPS)
+
+--------------------------------------------------------------------
+
+[ ] TL072 Dual Op-Amp (8-Pin DIP) - PREFERRED FOR AUDIO
+
+    - Qty: 3 (2 active + 1 spare)
+
+    - Allocation:
+
+        * Chip 1: Stage 1 (Vocal Formant Filter) & Stage 2 (Violin Low-Pass Filter)
+
+        * Chip 2: Stage 3 (Output Summing Mixer) + 1 spare op-amp half
+
+        * Chip 3: Full backup spare
+
+    - Note: +9V connects to Pin 8; -9V connects to Pin 4.
+
+
+
+[ ] LM741 Single Op-Amp (8-Pin DIP) - BACKUP ALTERNATIVE
+
+    - Qty: 5 (3 active + 2 spares)
+
+    - Allocation: 1x Vocal Filter, 1x Violin Filter, 1x Summing Mixer, 2x Spares
+
+    - Note: +9V connects to Pin 7; -9V connects to Pin 4.
+
+
+
+2. POWER SUPPLY (+/-9V SPLIT RAIL)
+
+--------------------------------------------------------------------
+
+[X] Standard 9V Alkaline Batteries
+
+    - Qty: 2
+
+    - Purpose: Wired in series to provide +9V, Common Ground (0V), and -9V rails.
+
+
+
+[ ] 9V Battery Snap Clips (with tinned wire leads)
+
+    - Qty: 2
+
+    - Purpose: Connects battery terminals to breadboard power rails.
+
+
+
+3. AUDIO I/O, CABLES & LAPTOP PROTECTION
+
+--------------------------------------------------------------------
+
+[1/2] 3.5mm Male-to-Male Stereo Auxiliary Cable
+
+    - Qty: 2
+
+    - Purpose:
+
+        * Cable 1: Laptop headphone/USB jack -> Breadboard Input (Left=Vocal, Right=Violin)
+
+        * Cable 2: Breadboard Output -> Powered Speakers Aux-In
+
+
+
+[ ] 3.5mm TRS Stereo Breakout Boards (Tip / Ring / Sleeve)
+
+    - Qty: 2 (1x Input from laptop, 1x Output to speakers)
+
+    - Alternative: Cheap 3.5mm aux cable or 3.5mm-to-RCA splitter stripped for breadboard insertion.
+
+
+
+[ ] USB-to-3.5mm External Audio Adapter (USB Sound Dongle)
+
+    - Qty: 1 (Recommended)
+
+    - Purpose: Protects laptop's internal sound card against accidental wiring shorts.
+
+
+
+4. RESISTORS (1/4 WATT, 5% OR 1% TOLERANCE)
+
+--------------------------------------------------------------------
+
+[ ] 10 kOhm Resistors
+
+    - Qty: 8
+
+    - Purpose:
+
+        * 1x Vocal filter input resistor
+
+        * 1x Vocal filter non-inverting ground bias resistor
+
+        * 2x Violin Sallen-Key low-pass filter pair
+
+        * 3x Output summing mixer (2x inputs + 1x feedback)
+
+        * 1x Spare
+
+
+
+[ ] 22 kOhm Resistors
+
+    - Qty: 2 (1 active + 1 spare)
+
+    - Purpose: Tunes the Vocal MFB Bandpass filter center frequency (~1 kHz formant).
+
+
+
+[ ] 100 kOhm Resistors
+
+    - Qty: 2 (1 active + 1 spare)
+
+    - Purpose: Sets Vocal MFB Bandpass filter resonance (Q) and gain.
+
+
+
+[ ] 1 kOhm Resistor
+
+    - Qty: 1
+
+    - Purpose: Output current limiter if plugging wired headphones/earbuds directly into output.
+
+
+
+5. CAPACITORS
+
+--------------------------------------------------------------------
+
+[ ] 10 nF (0.01 uF / Code "103") Ceramic Disc or Film Capacitors (Non-Polarized)
+
+    - Qty: 4
+
+    - Purpose:
+
+        * 2x Vocal MFB Bandpass filter network
+
+        * 2x Violin Sallen-Key Low-Pass filter network
+
+
+
+[X] 10 uF Aluminum Electrolytic Capacitors (Rated 16V, 25V, or 50V - Polarized)
+
+    - Qty: 3
+
+    - Purpose:
+
+        * 2x Input AC-coupling (blocks DC from hitting laptop Left/Right outputs)
+
+        * 1x Output AC-coupling (blocks DC from hitting speaker cone)
+
+    - Polarity Rule: Longer leg (+) faces op-amp side; striped leg (-) faces laptop/speaker.
+
+
+
+6. PROTOTYPING & TOOLS
+
+--------------------------------------------------------------------
+
+[ ] 830-Point Full-Size Solderless Breadboard (e.g., Inland 830 Tie-Point)
+
+    - Qty: 1
+
+
+
+[ ] 22AWG Pre-Cut, Pre-Bent Solid-Core Jumper Wire Kit (e.g., Inland 140-pc Box)
+
+    - Qty: 1 kit (For clean, flat internal breadboard routing)
+
+
+
+[X] Digital Multimeter (DMM)
+
+    - Qty: 1 (For verifying +9V and -9V rails before inserting op-amps)
+
+
+
+====================================================================
+
+STAGE-BY-STAGE QUICK ALLOCATION SUMMARY
+
+====================================================================
+
+* Stage 1 (Vocal Formant Filter - Left Channel):
+
+  1x Op-Amp, 2x 10kOhm, 1x 22kOhm, 1x 100kOhm, 2x 10nF ceramic, 1x 10uF electrolytic
+
+
+
+* Stage 2 (Violin Low-Pass Filter - Right Channel):
+
+  1x Op-Amp, 2x 10kOhm, 2x 10nF ceramic, 1x 10uF electrolytic
+
+
+
+* Stage 3 (Output Summing Mixer -> Speakers):
+
+  1x Op-Amp, 3x 10kOhm, 1x 10uF electrolytic, (optional 1x 1kOhm for headphones)
+
+====================================================================

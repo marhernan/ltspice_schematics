@@ -1,0 +1,18 @@
+Project Overview:
+I am building a hybrid analog-digital monophonic synthesizer on a solderless breadboard within a 3-week timeline to recreate the vocal and string timbres of Françoise Hardy’s "Parle-moi de lui".
+System Architecture ("Conductor / Instrument" Split):
+- Laptop (The Conductor): Generates raw, unshaped analog audio waves via software (Python/Web Audio/DAW) and sends them out of a 3.5mm stereo aux cable—Left Channel (Tip) plays a raw square wave for the vocal melody; Right Channel (Ring) plays a raw sawtooth wave for the backing violin harmony.
+- Breadboard Op-Amps (The Instruments): Shapes those incoming AC audio voltages in real time using active analog filters, sums them together, and outputs the final sound to powered speakers (or headphones via a $1\,\text{k}\Omega$ limiter).
+- Simulation: Using LTspice (including .wav file input/output simulation) to verify filter curves before wiring.
+Hardware & Finalized Bill of Materials (Sourced from Micro Center / Inland):
+- Op-Amps: TL072 dual op-amps (preferred for JFET audio clarity and dual-op-amp density; LM741 single op-amps as backup).
+- Power Supply: Two 9V alkaline batteries wired in series for a split $\pm9\text{V}$ rail ($+9\text{V}$, Common Ground, $-9\text{V}$).
+- I/O & Wiring: Two 3.5mm male-to-male stereo aux cables, two 3.5mm TRS breakout boards (input from laptop, output to speakers), optional USB-to-3.5mm sound dongle for laptop protection, an 830-point breadboard, and a 22AWG solid-core jumper wire kit.
+- Passive Components:
+  - Filter Capacitors: $10\,\text{nF}$ ($0.01\,\mu\text{F}$) ceramic/film capacitors.
+  - DC-Blocking Capacitors: $10\,\mu\text{F}$ polarized aluminum electrolytic capacitors (rated $\ge 16\text{V}$/25V/50V; positive leg facing op-amps, negative stripe facing laptop/speakers).
+  - Resistors (1/4W): $10\,\text{k}\Omega$ (×8), $22\,\text{k}\Omega$ (×2), $100\,\text{k}\Omega$ (×2), and $1\,\text{k}\Omega$ (×1).
+Current Progress & Next Steps:
+1. Finalized the BOM and Micro Center shopping list (bom.txt).
+2. Completed the step-by-step breadboard wiring guide for Stage 1: Vocal Formant Filter (a Multiple-Feedback Bandpass filter built on Op-Amp A of the first TL072, tuned around $\sim 860\text{ Hz} - 1\text{ kHz}$ using $R_1 = 22\,\text{k}\Omega$, $R_2 = 10\,\text{k}\Omega$, $R_3 = 100\,\text{k}\Omega$, and $C_1 = C_2 = 10\,\text{nF}$).
+3. Next Logical Steps: Wire Stage 2: Violin Sallen-Key Low-Pass Filter (on Op-Amp B of the first TL072), wire Stage 3: Output Summing Mixer (on a second TL072), set up the LTspice .wav simulation, and transcribe the opening notes of "Parle-moi de lui" into the laptop audio script.
