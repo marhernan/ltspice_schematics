@@ -1,6 +1,6 @@
 LTspice 26.0.1 for Windows
 Circuit: C:\Users\Administrator\place\schematics\phasoreslab\part1\Draft1.net
-Start Time: Tue Nov 17 07:57:06 2026
+Start Time: Tue Nov 17 09:05:38 2026
 solver = Normal
 Maximum thread count: 8
 tnom = 27
@@ -10,7 +10,7 @@ WARNING: Node n004 is floating.
 
 .OP point found by inspection.
 .OP point found by inspection.
-Total elapsed time: 0.339 seconds.
+Total elapsed time: 0.376 seconds.
 
 Files loaded:
 C:\Users\Administrator\place\schematics\phasoreslab\part1\Draft1.net
