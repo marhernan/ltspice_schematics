@@ -1,6 +1,6 @@
 LTspice 26.0.1 for Windows
 Circuit: C:\Users\Administrator\place\schematics\project\voice\Draft2.net
-Start Time: Tue Nov 24 15:14:13 2026
+Start Time: Wed Nov 25 13:27:23 2026
 solver = Normal
 Maximum thread count: 8
 tnom = 27
@@ -8,11 +8,9 @@ temp = 27
 method = trap
 Direct Newton iteration failed to find operating point.
 Starting Gmin stepping
-Gmin stepping failed to find operating point. Use".option gminsteps=0" to skip all Gmin stepping.
-Starting source stepping with srcstepmethod=0
-Source stepping succeeded in finding the operating point.
+Gmin stepping succeeded in finding the operating point.
 
-Total elapsed time: 0.115 seconds.
+Total elapsed time: 0.107 seconds.
 
 Files loaded:
 C:\Users\Administrator\place\schematics\project\voice\Draft2.net
