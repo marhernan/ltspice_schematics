@@ -1,10 +1,13 @@
 [workspace]
 authors = ["marhernan <mariodhernandezg@gmail.com>"]
 channels = ["conda-forge"]
-name = "project"
+name = "score"
 platforms = ["win-64"]
 version = "0.1.0"
 
 [tasks]
 
 [dependencies]
+python = ">=3.15.2,<3.16"
+numpy = ">=2.5.5,<3"
+scipy = ">=1.18.1,<2"

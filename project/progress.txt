@@ -1,0 +1,7 @@
+simulation voice might be done
+still have to do for violin
+
+still have to do score for both in python
+
+physical circuit on breadboard not at all
+
