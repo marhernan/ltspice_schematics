@@ -1,0 +1,6 @@
+.tran 0 50m 0 10u uic
+
+.ac dec 100 20 20k
+
+PULSE(-1 1 0 2.269m 2.7u 1n 2.272m)
+
